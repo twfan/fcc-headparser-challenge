@@ -25,7 +25,7 @@ app.get('/api/hello', function (req, res) {
 });
 
 app.get("/api/whoami", (req, res)=>{
-  const ipAddress = req.socket.remoteAddress;
+  const ipAddress = req.headers['host'];
   const language = req.headers['accept-language'];
   const software = req.headers['user-agent'];
   res.json({
